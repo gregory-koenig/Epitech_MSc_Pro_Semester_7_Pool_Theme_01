@@ -1,0 +1,358 @@
+{
+	"info": {
+		"_postman_id": "7aa8279c-cf49-4042-8522-dd3aa05198c6",
+		"name": "theme01",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Get",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/users/{{userID}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"{{userID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get a users with params",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/users?email={{email}}&username={{username}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"users"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "{{email}}"
+								},
+								{
+									"key": "username",
+									"value": "{{username}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"user\":\n    {\n        \"username\": \"greg\",\n        \"email\": \"greg@email.fr\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/users",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Modify",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"user\":\n    {\n        \"username\": \"plop\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/users/{{userID}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"{{userID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/users/{{userID}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"{{userID}}"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Working Times",
+			"item": [
+				{
+					"name": "Get all",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"working_time\":\n    {\n        \"start\": \"2020-10-20 09:30:00\",\n        \"end\": \"2020-10-20 05:30:00\",\n        \"user_id\": 1\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/workingtimes/{{userID}}?start={{start}}?end={{end}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"workingtimes",
+								"{{userID}}"
+							],
+							"query": [
+								{
+									"key": "start",
+									"value": "{{start}}?end={{end}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"working_time\":\n    {\n        \"start\": \"2020-10-20 09:30:00\",\n        \"end\": \"2020-10-20 05:30:00\",\n        \"user_id\": 1\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/workingtimes/{{userID}}/{{workingtimeID}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"workingtimes",
+								"{{userID}}",
+								"{{workingtimeID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"working_time\":\n    {\n        \"start\": \"2020-10-20 09:30:00\",\n        \"end\": \"2020-10-20 05:30:00\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/workingtimes/{{userID}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"workingtimes",
+								"{{userID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Modify",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"working_time\":\n    {\n        \"start\": \"1900-01-01 08:00:00\",\n        \"end\": \"1900-01-01 17:00:00\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/workingtimes/{{workingtimeID}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"workingtimes",
+								"{{workingtimeID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/workingtimes/{{workingtimeID}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"workingtimes",
+								"{{workingtimeID}}"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Clocks",
+			"item": [
+				{
+					"name": "Get",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/clocks/{{userID}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"clocks",
+								"{{userID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"clock\":\n    {\n        \"time\": \"1900-01-01 08:00:00\",\n        \"status\": false\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/clocks/{{userID}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"clocks",
+								"{{userID}}"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/login",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
